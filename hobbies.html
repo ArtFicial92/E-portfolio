@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hobbies | Lester De Vera</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    :root {
+      --primary: #38bdf8;
+      --bg: #0f172a;
+      --header-bg: #1e293b;
+      --text: #e0e7ff;
+      --card-bg: #1e293b;
+    }
+
+    .light {
+      --primary: #2563eb;
+      --bg: #f1f5f9;
+      --header-bg: #cbd5e1;
+      --text: #1e293b;
+      --card-bg: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      width: 240px;
+      min-height: 100vh;
+      background: var(--header-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    nav img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      width: 100%;
+      padding: 0;
+    }
+
+    nav ul li {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    nav ul li a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      display: block;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: var(--primary);
+      color: var(--bg);
+    }
+
+    .theme-toggle {
+      margin-top: auto;
+      background: var(--primary);
+      color: var(--bg);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .main {
+      margin-left: 240px;
+      width: calc(100% - 240px);
+      padding: 4rem 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+    }
+
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .hobby-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hobby-card i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .hobby-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--header-bg);
+      color: #94a3b8;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        height: auto;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+      }
+
+      nav ul {
+        flex-direction: row;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .main {
+        margin: 200px 0 0 0;
+        width: 100%;
+      }
+    }
+
+    .section-gallery {
+  margin-top: 4rem;
+  padding: 0 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="images/lester02.png" alt="Lester De Vera" />
+    <ul class="nav-links">
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="summary.html">Summary</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="affiliations.html">Affiliations</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="ojt.html">OJT Experience</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+    </ul>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
+    </button>
+  </nav>
+
+  <div class="main">
+    <header>
+      <h1>My Hobbies</h1>
+      <p>Things I enjoy doing in my personal time</p>
+    </header>
+
+    <section class="hobbies-grid" data-aos="fade-up">
+      <div class="hobby-card">
+        <i class="fas fa-pencil-alt"></i>
+        <h3>Drawing (Traditional)</h3>
+        <p>Sketching with pencils and pens lets me express emotions and ideas through art.</p>
+      </div>
+
+      <div class="hobby-card">
+        <i class="fas fa-tablet-alt"></i>
+        <h3>Drawing (Digital)</h3>
+        <p>Creating digital illustrations using a tablet and software like Photoshop or Krita fuels my creativity.</p>
+      </div>
+
+      <div class="hobby-card">
+        <i class="fas fa-camera"></i>
+        <h3>Photography</h3>
+        <p>I love capturing moments, nature, and creative angles through photography.</p>
+      </div>
+
+      <div class="hobby-card">
+        <i class="fas fa-guitar"></i>
+        <h3>Playing Guitar</h3>
+        <p>Strumming chords and learning new songs is a relaxing and expressive outlet for me.</p>
+      </div>
+
+      <div class="hobby-card">
+        <i class="fas fa-code"></i>
+        <h3>Coding</h3>
+        <p>Building websites, games, and automating tasks is more than a skill—it's a passion.</p>
+      </div>
+    </section>
+
+    <section class="section-gallery" data-aos="fade-up">
+  <h2 style="text-align: center; margin-bottom: 1.5rem;">Photo Gallery</h2>
+  <div class="gallery-grid">
+    <img src="images/ojt13.jpg" alt="Gallery photo 1">
+    <img src="images/15.jpg" alt="Gallery photo 2">
+    <img src="images/16.jpg" alt="Gallery photo 3">
+    <img src="images/17.jpg" alt="Gallery photo 4">
+    <img src="images/18.jpg" alt="Gallery photo 5">
+    <img src="images/19.jpg" alt="Gallery photo 6">
+    <img src="images/20.jpg" alt="Gallery photo 6">
+    <img src="images/21.jpg" alt="Gallery photo 6">
+    <img src="images/22.jpg" alt="Gallery photo 6">
+  </div>
+</section>
+
+
+    <footer>
+      &copy; 2025 Lester De Vera.
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('light');
+      const icon = document.querySelector('.theme-toggle i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    }
+  </script>
+</body>
+</html>
