@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Affiliations | Lester De Vera</title>
+  <link rel="icon" type="image/png" href="images/icon.png" />
+	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #38bdf8;
+      --bg: #0f172a;
+      --text: #e0e7ff;
+      --card-bg: #1e293b;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 2rem;
+      background: var(--primary);
+      color: var(--bg);
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .back-button:hover {
+      background: #0ea5e9;
+    }
+    h1 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .affiliation {
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .affiliation strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+    .affiliation span {
+      display: block;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+
+                /* Loading screen */
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      display: none;
+    }
+
+    #loadingScreen.show {
+      display: flex;
+    }
+
+    #loadingScreen img {
+      width: 300px;
+      margin-bottom: 1rem;
+    }
+
+    #loadingScreen p {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+     <div id="loadingScreen">
+    <img src="images/loading.gif" alt="Loading..." />
+    <p>Loading...</p>
+  </div>
+  <div class="container">
+    <a class="back-button" href="index.html">&larr; Back to Portfolio</a>
+
+    <h1>Affiliations</h1>
+
+    <div class="affiliation">
+      <strong>TIPA (Technology and Innovation Programming Association)</strong>
+      <span>Vice President - External Affairs</span>
+      <span>2023 – 2024</span>
+    </div>
+
+    <div class="affiliation">
+      <strong>Ulat Vlog</strong>
+      <span>Content Creator</span>
+      <span>2023 – 2024</span>
+    </div>
+
+    <div class="affiliation">
+      <strong>The Essence (School Publication)</strong>
+      <span>Editorial Cartoonist</span>
+      <span>2023 – 2024</span>
+    </div>
+
+    <div class="affiliation">
+      <strong>The Essence (School Publication)</strong>
+      <span>Head Illustrator</span>
+      <span>2024 – 2025</span>
+    </div>
+  </div>
+</body>
+<script>
+   // 🌀 Show loading screen on internal link clicks
+    const pageLinks = document.querySelectorAll('a[href$=".html"]');
+    const loader = document.getElementById('loadingScreen');
+
+    pageLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        loader.classList.add('show');
+        setTimeout(() => {
+          window.location.href = target;
+        }, 1200);
+      });
+    });
+</script>
+</html>

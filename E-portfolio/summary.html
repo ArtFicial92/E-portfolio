@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Summary | Lester De Vera</title>
+  <link rel="icon" type="image/png" href="images/icon.png" />
+	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #38bdf8;
+      --bg: #0f172a;
+      --text: #e0e7ff;
+      --card-bg: #1e293b;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .back-button {
+      display: inline-block;
+      margin-bottom: 2rem;
+      background: var(--primary);
+      color: var(--bg);
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .back-button:hover {
+      background: #0ea5e9;
+    }
+    h1 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+    p {
+      line-height: 1.7;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+            /* Loading screen */
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      display: none;
+    }
+
+    #loadingScreen.show {
+      display: flex;
+    }
+
+    #loadingScreen img {
+      width: 300px;
+      margin-bottom: 1rem;
+    }
+
+    #loadingScreen p {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+   <div id="loadingScreen">
+    <img src="images/loading.gif" alt="Loading..." />
+    <p>Loading...</p>
+  </div>
+  <div class="container">
+    <a class="back-button" href="index.html">&larr; Back to Portfolio</a>
+
+    <h1>Professional Summary</h1>
+
+    <div class="section">
+      <h2>Objective</h2>
+      <p>
+        Motivated and detail-oriented professional seeking to contribute my skills and dedication to a dynamic organization. 
+        Eager to apply my knowledge, adaptability, and strong work ethic in a challenging role that offers opportunities 
+        for growth and development. Committed to delivering high-quality results, collaborating effectively with teams, 
+        and continuously learning to enhance performance and contribute to the success of the company.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Overview</h2>
+      <p>
+        I am a Computer Science graduate from the University of Rizal System – Morong Campus. 
+        My academic journey and project experiences have built a solid foundation in software development, 
+        project management, and system analysis. I specialize in web development, application design, 
+        and enjoy solving real-world problems through technology.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Key Skills</h2>
+      <ul>
+        <li>Web Development (HTML, CSS, JS)</li>
+        <li>Programming: Python, Java, C#, PHP</li>
+        <li>Data Visualization</li>
+        <li>Machine Learning Fundamentals</li>
+        <li>Project Management</li>
+        <li>Critical Thinking and Problem Solving</li>
+        <li>Creative UI/UX Design</li>
+        <li>Leadership and Team Collaboration</li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+   // 🌀 Show loading screen on internal link clicks
+    const pageLinks = document.querySelectorAll('a[href$=".html"]');
+    const loader = document.getElementById('loadingScreen');
+
+    pageLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        loader.classList.add('show');
+        setTimeout(() => {
+          window.location.href = target;
+        }, 1200);
+      });
+    });
+</script>
+</html>

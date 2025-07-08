@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OJT Experience | Lester De Vera</title>
+  <link rel="icon" type="image/png" href="images/icon.png" />
+	<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #e0e7ff;
+    }
+
+    /* 🔄 Loading Screen Styles */
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      display: none;
+    }
+    #loadingScreen img {
+      width: 300px;
+      margin-bottom: 1rem;
+    }
+    #loadingScreen p {
+      color: #a78bfa;
+      font-weight: 600;
+      font-size: 1.2rem;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(-45deg, #1e293b, #0f172a, #1e293b, #0f172a);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #38bdf8;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .experience {
+      background-color: #1e293b;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .experience h2 {
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+
+    .experience p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border: 5px solid #fff;
+      border-radius: 10px;
+    }
+
+    .lightbox span {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .back-button {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .back-button a {
+      background: #38bdf8;
+      color: #0f172a;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <!-- 🔄 Loading Screen -->
+  <div id="loadingScreen">
+    <img src="images/loading.gif" alt="Loading..." />
+    <p>Loading...</p>
+  </div>
+
+  <header>
+    <h1>OJT Experience</h1>
+  </header>
+
+  <div class="container">
+    <div class="back-button">
+      <a href="index.html">&larr; Back to Portfolio</a>
+    </div>
+
+    <section class="experience" data-aos="fade-up">
+      <h2>My OJT Journey</h2>
+      <p>From February 24 to April 15, 2025, I completed my On-the-Job Training at the ICT Unit of the University of Rizal System - Morong Campus as a BS Computer Science student. Throughout my training, I was involved in a variety of real-world technical and clerical tasks that enhanced both my skills and confidence in the IT field.</p>
+      <p>My responsibilities included troubleshooting and maintaining computers, printers, and internet connections across various offices, as well as installing software such as MS Office and PuTTY. I also installed and organized network cables in multiple buildings, cleaned firewalls, and managed technical requests from departments like the Registrar, Dental Clinic, MIS Office, and more. Additionally, I handled document delivery and reception, performed quality assurance, and maintained logs for equipment borrowing and service tracking.</p>
+      <p>One of the most significant parts of my OJT was being solely responsible for designing and coding a website for the ICT Unit. I worked independently on the entire development process—from layout and user interface to functionality and content—while balancing my other daily technical tasks. This project allowed me to apply my programming skills in a real-world setting and pushed me to grow as a developer. Overall, my OJT experience gave me valuable exposure to both the technical and operational sides of IT work, and it helped me develop not only my skills but also my work ethic, communication, and problem-solving abilities.</p>
+    </section>
+
+    <section class="experience" data-aos="fade-up">
+      <h2>Photo Gallery</h2>
+      <div class="gallery">
+         <img src="images/ojt1.jpg" alt="OJT Photo 1" onclick="openLightbox(this.src)" />
+        <img src="images/ojt2.jpg" alt="OJT Photo 2" onclick="openLightbox(this.src)" />
+        <img src="images/ojt3.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt4.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt5.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt6.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt7.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt8.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt9.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt10.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt11.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt12.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt13.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt14.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt15.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt16.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt17.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt18.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt19.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt20.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt21.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt22.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt23.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt24.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt25.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt26.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt27.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt28.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt29.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt30.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt31.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+        <img src="images/ojt32.jpg" alt="OJT Photo 3" onclick="openLightbox(this.src)" />
+      </div>
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" onclick="closeLightbox()">
+    <span>&times;</span>
+    <img id="lightbox-img" src="" alt="Full Image">
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function openLightbox(src) {
+      document.querySelector('.lightbox').style.display = 'flex';
+      document.getElementById('lightbox-img').src = src;
+    }
+
+    function closeLightbox() {
+      document.querySelector('.lightbox').style.display = 'none';
+    }
+
+    // 🔁 Loading animation for internal links
+    const pageLinks = document.querySelectorAll('a[href$=".html"]');
+    const loader = document.getElementById('loadingScreen');
+
+    pageLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        loader.style.display = 'flex';
+        setTimeout(() => {
+          window.location.href = target;
+        }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>
